@@ -8,7 +8,9 @@ app.use(express.json());
 
 let { UserRoute } = require("./routes/user.routes");
 let { CategoryRoute } = require("./routes/category.routes");
-const { ProductRouter } = require("./routes/product.routes");
+let { ProductRouter } = require("./routes/product.routes");
+let { CartRoute } = require("./routes/cart.routes");
+const { authMiddleWare } = require("./middlewares/auth.middleware");
 
 app.get("/", (req, res) => {
   res.send("Backend Route check");
@@ -17,6 +19,10 @@ app.get("/", (req, res) => {
 app.use("/", UserRoute);
 app.use("/", CategoryRoute);
 app.use("/", ProductRouter);
+
+app.use(authMiddleWare);
+
+app.use("/", CartRoute);
 
 app.listen(process.env.PORT, async () => {
   try {

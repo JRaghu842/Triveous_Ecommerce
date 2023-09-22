@@ -7,7 +7,7 @@ let cartItemSchema = new mongoose.Schema({
     required: true,
   },
   quantity: {
-    true: Number,
+    type: Number,
     default: 1,
   },
 });
