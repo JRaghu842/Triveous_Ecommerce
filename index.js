@@ -10,11 +10,12 @@ let { UserRoute } = require("./routes/user.routes");
 let { CategoryRoute } = require("./routes/category.routes");
 let { ProductRouter } = require("./routes/product.routes");
 let { CartRoute } = require("./routes/cart.routes");
+const { OrderRoute } = require("./routes/order.routes");
 const { authMiddleWare } = require("./middlewares/auth.middleware");
 
-app.get("/", (req, res) => {
-  res.send("Backend Route check");
-});
+// app.get("/", (req, res) => {
+//   res.send("Backend Route check");
+// });
 
 app.use("/", UserRoute);
 app.use("/", CategoryRoute);
@@ -23,6 +24,7 @@ app.use("/", ProductRouter);
 app.use(authMiddleWare);
 
 app.use("/", CartRoute);
+app.use("/", OrderRoute);
 
 app.listen(process.env.PORT, async () => {
   try {
