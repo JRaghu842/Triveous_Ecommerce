@@ -13,9 +13,10 @@ let { CartRoute } = require("./routes/cart.routes");
 const { OrderRoute } = require("./routes/order.routes");
 const { authMiddleWare } = require("./middlewares/auth.middleware");
 
-// app.get("/", (req, res) => {
-//   res.send("Backend Route check");
-// });
+const { swaggerSpec } = require("./swagger");
+const swaggerUi = require("swagger-ui-express");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/", UserRoute);
 app.use("/", CategoryRoute);
