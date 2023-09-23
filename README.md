@@ -31,18 +31,15 @@ Before setting up the project, ensure you have the following dependencies instal
    ```bash
    git clone https://github.com/your-username/e-commerce-backend.git
 
-
 2. Navigate to the project directory:
 
    ```bash
    cd e-commerce-backend
 
-
 3. Install dependencies:
 
    ```bash
    npm install
-
 
 4. Create a .env file in the project root and configure your environment variables:
 
@@ -56,8 +53,6 @@ Before setting up the project, ensure you have the following dependencies instal
 
    ```bash
    npm start
-
-
 
 
 ## Functionality
