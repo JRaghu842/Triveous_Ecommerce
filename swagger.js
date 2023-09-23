@@ -10,7 +10,7 @@ const options = {
       },
       servers: [
         "http://localhost:8080",
-        "https://triveous-ecom-4qor.onrender.com/",
+        "https://triveous-ecom-4qor.onrender.com",
       ],
     },
   },

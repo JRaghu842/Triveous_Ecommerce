@@ -52,36 +52,43 @@
  *     tags:
  *       - Products
  */
-
 /**
  * @swagger
  * /products:
  *   post:
  *     summary: Create a new product
  *     description: Create a new product with the provided details.
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               title:
- *                 type: string
- *               price:
- *                 type: number
- *               description:
- *                 type: string
- *               availability:
- *                 type: boolean
- *               categoryId:
- *                 type: string
- *             required:
- *               - title
- *               - price
- *               - description
- *               - availability
- *               - categoryId
+ *     parameters:
+ *       - in: query
+ *         name: title
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The title of the product.
+ *       - in: query
+ *         name: price
+ *         required: true
+ *         schema:
+ *           type: number
+ *         description: The price of the product.
+ *       - in: query
+ *         name: description
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The description of the product.
+ *       - in: query
+ *         name: availability
+ *         required: true
+ *         schema:
+ *           type: boolean
+ *         description: The availability status of the product.
+ *       - in: query
+ *         name: categoryId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The category ID of the product.
  *     responses:
  *       201:
  *         description: Product created successfully.

@@ -26,17 +26,13 @@
  *   post:
  *     summary: Create a new category
  *     description: Create a new category with the specified name.
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *                 description: The name of the category to create.
- *                 example: New Category
+ *     parameters:
+ *       - in: query
+ *         name: name
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The name of the category to created.
  *     responses:
  *       200:
  *         description: Category created successfully.
